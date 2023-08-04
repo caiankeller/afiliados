@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly PORT: number;
+  readonly VITE_INPUT_FILE_TYPE: string;
   readonly DATABASE_URL: string;
 }
 

@@ -1,20 +1,28 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Transacao {
-  id       Int    @id @default(autoincrement())
-  tipo     String
-  data     String
-  produto  String
-  valor    Int
-  vendedor String
+model TransactionType {
+  type        String @id @unique
+  description String
+  nature      String
+  signal      String
+
+  transactions Transaction[]
+}
+
+model Transaction {
+  id       String @id @unique
+  type     String
+  date     String
+  name     String
+  priceTag Int
+  seller   String
+
+  typeReference TransactionType @relation(fields: [type], references: [type])
 }
