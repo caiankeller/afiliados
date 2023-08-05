@@ -24,7 +24,7 @@ async function main() {
       },
       {
         type: "4",
-        description: "Comissão recebtypoa",
+        description: "Comissão recebida",
         nature: "Entrada",
         signal: "+"
       },
