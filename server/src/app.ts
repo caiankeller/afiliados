@@ -7,5 +7,5 @@ const app: Express = express();
 app.use(cors());
 app.use(router);
 
-app.listen(1707); // you gotta change that on the vite config, the plugin is in the very early development, so its kinda rustic yet
+app.listen(1707); //pretty much useless, change that on vite.config
 export const viteNodeApp = app;

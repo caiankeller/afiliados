@@ -4,8 +4,8 @@
   "scripts": {
     "setup": "npm install && npm run server:setup && npm run client:setup",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "server:setup": "cd server && npm install && npx prisma migrate dev --name dev",
+    "server": "cd server && npx prisma migrate dev --name dev && npm run dev ",
+    "server:setup": "cd server && npx prisma migrate dev --name dev && npm install",
     "client": "cd client && npm run dev",
     "client:setup": "cd client && npm install"
   },
